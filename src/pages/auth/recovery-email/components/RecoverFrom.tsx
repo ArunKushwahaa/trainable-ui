@@ -15,7 +15,7 @@ const FormSchema = z.object({
   }),
 });
 
-export default function LoginFrom() {
+export default function RecoverFrom() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -40,27 +40,17 @@ export default function LoginFrom() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="grid gap-4">
-          {/* Email Field */}
+          {/* Password Field */}
           <FormInputField
             name="email"
             label="Email"
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             control={form.control}
           />
-
-          {/* Password Field */}
-          <FormInputField
-            name="password"
-            label="Password"
-            type="password"
-            placeholder="********"
-            control={form.control}
-          />
-
           {/* Login Button */}
           <Button type="submit" className="w-full">
-            Log In
+            Submit
           </Button>
         </div>
       </form>

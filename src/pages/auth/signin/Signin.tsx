@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router";
 import LoginFrom from "./components/LoginFrom";
 import { Button } from "@/components/ui/button";
+import { AUTH_ROUTE } from "@/lib/constants/route_list";
 
 const Signin = () => {
   return (
@@ -21,7 +22,12 @@ const Signin = () => {
         </CardHeader>
         <CardContent>
           <LoginFrom />
-
+          <Link
+            to={AUTH_ROUTE.FORGOT_PASSWORD}
+            className="ml-auto inline-block text-sm underline mt-2"
+          >
+            Forgot your password?
+          </Link>
           {/* Login with Google Button */}
           <Button variant="outline" className="w-full mt-4">
             Log In with Google
@@ -29,7 +35,7 @@ const Signin = () => {
 
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
-            <Link to="/signup" className="underline">
+            <Link to={AUTH_ROUTE.SIGNUP} className="underline">
               Sign up
             </Link>
           </div>

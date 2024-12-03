@@ -29,7 +29,7 @@ const Signup = () => {
           <div className="mt-4 text-center text-sm">
             Already having an account?{" "}
             <Link to="/" className="underline">
-              Sign In
+              Log In
             </Link>
           </div>
         </CardContent>
