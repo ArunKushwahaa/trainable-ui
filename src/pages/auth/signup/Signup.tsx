@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
 
 const Signup = () => {
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <Card className="mx-auto max-w-sm">
+    <div className="min-h-screen flex justify-center items-center py-10">
+      <Card className="mx-auto max-w-sm w-full">
         <CardHeader>
           <CardTitle className="text-2xl">Sign Up</CardTitle>
           <CardDescription>

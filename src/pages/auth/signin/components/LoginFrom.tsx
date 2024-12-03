@@ -13,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import { BaseInput } from "@/components/custom-ui/BaseInput";
+import FormInputField from "@/components/custom-ui/FormInputField";
 
 const FormSchema = z.object({
   email: z.string().min(2, {
@@ -49,52 +50,21 @@ export default function LoginFrom() {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           {/* Email Field */}
-          <FormField
-            control={form.control}
+          <FormInputField
             name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <FormControl>
-                  <BaseInput
-                    id="email"
-                    type="email"
-                    placeholder="m@example.com"
-                    required
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            label="Email"
+            type="email"
+            placeholder="Email"
+            control={form.control}
           />
 
           {/* Password Field */}
-          <FormField
-            control={form.control}
+          <FormInputField
             name="password"
-            render={({ field }) => (
-              <FormItem>
-                <div className="flex items-center justify-between">
-                  <FormLabel htmlFor="password">Password</FormLabel>
-                  <Link
-                    to="/"
-                    className="ml-auto inline-block text-sm underline"
-                  >
-                    Forgot your password?
-                  </Link>
-                </div>
-                <FormControl>
-                  <BaseInput
-                    id="password"
-                    type="password"
-                    required
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            label="Password"
+            type="password"
+            placeholder="********"
+            control={form.control}
           />
 
           {/* Login Button */}
