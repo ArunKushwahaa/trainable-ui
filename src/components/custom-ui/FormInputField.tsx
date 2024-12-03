@@ -10,7 +10,7 @@ import { BaseInput } from "@/components/custom-ui/BaseInput";
 
 interface FormInputFieldProps {
   name: string;
-  label?: string;
+  label: string;
   type?: string;
   placeholder?: string;
   control: any; // React Hook Form control

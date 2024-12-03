@@ -6,6 +6,8 @@ import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import FormInputField from "@/components/custom-ui/FormInputField";
 
+import FormSelect from "@/components/custom-ui/FormSelect";
+
 const FormSchema = z.object({
   email: z.string().min(2, {
     message: "Email is required",
@@ -76,6 +78,13 @@ export default function SignupFrom() {
             label="company Website"
             type="url"
             placeholder="Company Website"
+            control={form.control}
+          />
+
+          {/* package select */}
+          <FormSelect
+            name="package"
+            label="Select Package"
             control={form.control}
           />
 
